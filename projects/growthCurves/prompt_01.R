@@ -25,17 +25,18 @@
 # read in the resulting data 'growthCurves_01.csv' into R, use the file 'randomize_01.csv' to map the wells to the different strains
 # 1. Use the growth.gcFitSpline() function from the QurvE R package to fit a curve to data for each well. Use functions in the lubridate R package, to convert time into hours with decimal units (e.g. 1.52 hours etc)
 # Extract the doubling time during log phase growth. Visualize some of the fits.
-# 2. Visualize the doubling times as a histogram with different colors for the two strains. Use ggplot2 to make this visualization.
+# 2. Visualize the doubling times as a histogram with different colors for the two strains. Use ggplot2 to make this visualization. 
+# Visualize it again as a violin plot using ggplot, include the individual doubling times, the mean and the 95% CI of the mean in your visualization. 
 # 3. Use R's t.test() function to test whether the distributions whether the means of the two groups come from the same distribution. Should you use a paired t-test?
 # 4. You show your results to Josh and he's concerned about outliers, your data not being normally distributed, and not having equal variances. He suggest you perform a permutation test.
 # What assumptions does the permutation test make?
-# Use R's t.test() function to generate a null distribution of t statistics permuting the assignment of strain to doubling time 1000 times. Calculate an approximate p-value given this empirical null
+# Use R's t.test() function to generate a null distribution of t-statistics permuting the assignment of strain to doubling time 1000 times. Calculate an approximate p-value given this empirical null
 # distribution of test statistics and your observed test statistic from your experiment. 
-# 5. Given your results Josh asks you do to a power calculation. He wants to know how small of a fitness difference in doubling time we are powered to see between BY and other strains.
+# 5. Given your results Josh asks you do to a power calculation. He wants you to figure out how small of a fitness difference (measured in doubling time) we are powered to see between BY and other strains.
 # He wants to know what the power would be given 3,6,12,24,48,96,and 384 replicate growth curves for each strain. Test increments of 3 minutes from 60 minutes to 240 minutes.
 # Assume BY has a true mean doubling time of 90 minutes with an SD of 18 minutes (compare that to what you observed experimentally), and that the other strains also have the same SD.
 # Calculate power as the fraction of 1000 tests with p<.05 for each combination of parameters. Use ggplot to plot the results. On the x-axis show the difference in doubling times 
-# between BY and the hypothetical strain that you are powered to see in minutes. IF you want to have power to detect a ten minute difference in doubling time between BY and another strain
-# how many replicates of each strain should you use.
-# For visualization, hint, convert sample size to a factor to aid visualization.
+# between BY and the hypothetical strain that you are powered to see in minutes. On the y-axis show the power. Lines should be the different sample sizes.
+# If you want to have power to detect a ten minute difference in doubling time between BY and another strain how many replicates of each strain should you use.
+# For ease of visualization, hint, convert sample size to a factor.
 
