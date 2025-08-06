@@ -10,7 +10,8 @@
 #
 # Make a file for the Biomek robot to innoculate 1 uL of saturated culture into 30 different random wells in a target plate for each of the two strains. 
 # If you grow up this plate you will have 30 replicate growth curves for each strain.
-# The edges of the plate should contain media blanks. This will evaluate whether your media was contaminated. 
+# The edges of the plate should contain media blanks. This will evaluate whether your media was contaminated. If you pre-fill the plate with media manually, then any wells 
+# not included in the csv file will stay blank.
 # They are also more greatly affected by evaporation and yield unreliable growth curves.
 # The Biomek requires a comma-delimited csv file as input with the following column heading, it should also contain DOS new line characters:
 # Source.Plate, Source.Wells, Strain, Target.Plate, Target.Wells, Volume
