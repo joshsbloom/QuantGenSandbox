@@ -34,7 +34,7 @@
 # Use R's t.test() function to generate a null distribution of t-statistics permuting the assignment of strain to doubling time 1000 times. Calculate an approximate p-value given this empirical null
 # distribution of test statistics and your observed test statistic from your experiment. 
 # 5. Given your results Josh asks you do to a power calculation. He wants you to figure out how small of a fitness difference (measured in doubling time) we are powered to see between BY and other strains.
-# He wants to know what the power would be given 3,6,12,24,48,96,and 384 replicate growth curves for each strain. Test increments of 3 minutes from 60 minutes to 240 minutes.
+# He wants to know what the power would be given 3,6,12,24,48,96,and 384 replicate growth curves for each strain. Evaluate increments of 3 minutes from 60 minutes to 240 minutes.
 # Assume BY has a true mean doubling time of 90 minutes with an SD of 18 minutes (compare that to what you observed experimentally), and that the other strains also have the same SD.
 # Calculate power as the fraction of 1000 tests with p<.05 for each combination of parameters. Use ggplot to plot the results. On the x-axis show the difference in doubling times 
 # between BY and the hypothetical strain that you are powered to see in minutes. On the y-axis show the power. Lines should be the different sample sizes.
