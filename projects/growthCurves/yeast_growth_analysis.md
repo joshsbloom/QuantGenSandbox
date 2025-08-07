@@ -116,9 +116,9 @@ Evaluate:
   - SD = **18 min**
   - Other strain has same SD
 
-- For each combo:
-  - Run 1000 simulations, simulating from two normal distributions with means being the expected doubling times, SD as above, and number of replicates per strain
-  - Calculate power as the fraction of simulations with t-test `p < 0.05`
+- For each combo of parameters:
+  - Run 1000 simulations, simulating from two normal distributions with means being the expected doubling times, SD as specified above, and number of replicates per strain
+  - Calculate power as the fraction of simulations out of 1000 per combo with t-test `p < 0.05`
 
 - **Plot** using `ggplot2`:
   - **X-axis**: Difference in doubling time (minutes)  
