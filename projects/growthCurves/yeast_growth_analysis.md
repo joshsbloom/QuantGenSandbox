@@ -41,11 +41,11 @@ You want to determine whether there is a difference in how the yeast grow in **Y
   - `set.seed(10)`
   - `paste0()`, `rep()`, `toupper()`, `sprintf()`, `sample()`
   - `write.table()` with:
-    - `col.names = TRUE`
-    - `row.names = FALSE`
-    - `sep = ","`
-    - `quote = FALSE`
-    - `eol = "\r\n"`
+    - `col.names`
+    - `row.names`
+    - `sep`
+    - `quote`
+    - `eol`
 
 - **Extra credit**: Write the whole code in **4 lines**.
 
@@ -58,9 +58,9 @@ You’ve completed the experiment. Is there a difference in how BY and RM grow?
 ### Step 1: Fit Growth Curves
 
 - Read in the data from the GitHub repository [`joshsbloom/QuantGenSandbox`](https://github.com/joshsbloom/QuantGenSandbox):
-  - Growth data: `projects/growthCurves/growthCurves_01.csv`
-  - Biomek file used to setup the 96-well plate: `projects/growthCurves/randomize_01.csv`
- 
+  - plate reader growth data: [`projects/growthCurves/growthCurves_01.csv`](https://github.com/joshsbloom/QuantGenSandbox/projects/growthCurves/growthCurves_01.csv)
+  - Biomek CSV file mapping strains to wells: [`projects/growthCurves/randomize_01.csv`](https://github.com/joshsbloom/QuantGenSandbox/projects/growthCurves/randomize_01.csv)
+
 - Use:
   - `growth.gcFitSpline()` from the **QurvE** R package
   - `lubridate` to convert time into **decimal hours**
@@ -90,19 +90,13 @@ You’ve completed the experiment. Is there a difference in how BY and RM grow?
 
 ### Step 4: Permutation Test 
 
-Josh is concerned about:
-- Outliers
-- Non-normality
-- Unequal variances
+Josh is concerned about whether the assumptions of a t.test are valid here, so he recommends performing a **permutation test**.
 
-So he recommends performing a **permutation test**.
-
-- **Questions**: What assumptions does the permutation test make? Why might this 
+- **Questions**: What assumptions does the permutation test make? What are the assumptions about a parametric t-test that Josh is concerned about?
 
 - Generate a **null distribution** of t-statistics by **permuting strain labels** 1000 times and calculating the t-statistic each time
     - Visualize where the observed t-statistic is compared to this empirical null distribution
-    - Calculate an **empirical p-value** based on the observed t-statistic
-    - Visualize the results
+    - Calculate an **p-value** based on comparing the observed t-statistic for the non-permuted data vs the empirical null distribution
 
 ---
 
@@ -123,12 +117,12 @@ Evaluate:
 
 - For each combo:
   - Run 1000 simulations, simulating from two normal distributions with means being the expected doubling times, SD as above, and number of replicates per strain
-  - Calculate power as fraction of tests with `p < 0.05`
+  - Calculate power as the fraction of simulations with t-test `p < 0.05`
 
 - **Plot** using `ggplot2`:
   - **X-axis**: Difference in doubling time (minutes)  
   - **Y-axis**: Power  
-  - **Line color/type**: Sample size (convert to factor)
+  - **Line color/type**: Sample size (convert to factor for prettier colors)
 
 - **Question**:  
   > If you want to detect a 10-minute difference in doubling time, how many replicates do you need?
