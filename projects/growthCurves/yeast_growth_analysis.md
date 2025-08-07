@@ -38,7 +38,8 @@ You want to determine whether there is a difference in how the yeast grow in **Y
 
 - Use:
   - `data.frame()`
-  - `set.seed(10)`
+  - `sample()`
+  - `set.seed(10)` specifying a specific seed will enable reproducible randomizations from the code
   - `paste0()`, `rep()`, `toupper()`, `sprintf()`, `sample()`
   - `write.table()` with:
     - `col.names`
