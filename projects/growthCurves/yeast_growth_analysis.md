@@ -112,7 +112,7 @@ Evaluate statistical power by simulation across this grid of parameters:
 - **Replicates per strain**: 3, 6, 12, 24, 48, 96, 384  
 - **Doubling time differences**: From 60 to 240 minutes, in **3-minute increments**  
 - **Assumptions**:
-  - BY mean = **90 min**
+  - BY mean doubling time = **90 min**
   - SD = **18 min**
   - Other strain has same SD
 
