@@ -107,7 +107,7 @@ Josh now asks:
 
 > How small of a fitness difference (measured in doubling time) are we powered to detect?
 
-Evaluate:
+Evaluate statistical power by simulation across this grid of parameters:
 
 - **Replicates per strain**: 3, 6, 12, 24, 48, 96, 384  
 - **Doubling time differences**: From 60 to 240 minutes, in **3-minute increments**  
