@@ -58,8 +58,8 @@ You’ve completed the experiment. Is there a difference in how BY and RM grow?
 ### Step 1: Fit Growth Curves
 
 - Read in the data from the GitHub repository [`joshsbloom/QuantGenSandbox`](https://github.com/joshsbloom/QuantGenSandbox):
-  - plate reader growth data: [`projects/growthCurves/growthCurves_01.csv`](https://github.com/joshsbloom/QuantGenSandbox/projects/growthCurves/growthCurves_01.csv)
-  - Biomek CSV file mapping strains to wells: [`projects/growthCurves/randomize_01.csv`](https://github.com/joshsbloom/QuantGenSandbox/projects/growthCurves/randomize_01.csv)
+  - plate reader growth data: [`projects/growthCurves/growthCurves_01.csv`](/projects/growthCurves/growthCurves_01.csv)
+  - Biomek CSV file mapping strains to wells: [`projects/growthCurves/randomize_01.csv`](/projects/growthCurves/randomize_01.csv)
 
 - Use:
   - `growth.gcFitSpline()` from the **QurvE** R package
