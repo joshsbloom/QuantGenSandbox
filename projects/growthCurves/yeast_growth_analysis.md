@@ -71,7 +71,7 @@ You’ve completed the experiment. Is there a difference in how BY and RM grow?
 
 ---
 
-### Step 2: Visualize Doubling Times
+### Step 2: Visualize Doubling Times Distribution by Strain
 
 - Use `ggplot2` to make:
   - **Histogram** of doubling times by strain (with different colors)
