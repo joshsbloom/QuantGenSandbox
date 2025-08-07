@@ -105,7 +105,7 @@ Josh is concerned about whether the assumptions of a t.test are valid here, so h
 
 Josh now asks:
 
-> How small of a fitness difference (measured in doubling time) are we powered to detect?
+> How small of a fitness difference (measured in doubling time) are we powered to detect between BY and an arbitrary new strain with a different doubling time?
 
 Evaluate statistical power by simulation across this grid of parameters:
 
