@@ -16,7 +16,8 @@ You want to determine whether there is a difference in how the yeast grow in **Y
   - **BY**: Well `A01`  
   - **RM**: Well `A02`
 
-- Use the **Biomek robot** to inoculate the two yeast strains into another 96-well plate called **`Plate080625perm_YNB_GLU`** to obtain replicate growth curves.
+- Use the **Biomek robot** to inoculate the two yeast strains into another 96-well plate called **`Plate080625perm_YNB_GLU`** to obtain replicate growth curves. 
+- The **Biomek robot** needs a CSV file to tell it how to set up the 96-well plate; from which well to pipette from, which well to pipette into and how much volume.
 
 - The 96-well plate format has rows `A`–`H` and columns `01`–`12`. **All numbers less than 10 need a preceding 0** (e.g., `B03`, `C09`) for the Biomek to process them correctly.
 
