@@ -1,0 +1,134 @@
+# Yeast Growth in YNB + Glucose Media
+
+## Background
+
+You have two strains of yeast:  
+- **BY**: Lab reference strain  
+- **RM**: Vineyard isolate  
+
+You want to determine whether there is a difference in how the yeast grow in **YNB + glucose media**.
+
+---
+
+## 1) Growth Curve Setup
+
+- **120 µL cultures** of the strains were grown overnight to saturation in a 96-well plate called **`Plate080525_YNB_GLU`**.  
+  - **BY**: Well `A01`  
+  - **RM**: Well `A02`
+
+- Use the **Biomek robot** to inoculate the two yeast strains into another 96-well plate called **`Plate080625perm_YNB_GLU`** to obtain replicate growth curves.
+
+- The 96-well plate format has rows `A`–`H` and columns `01`–`12`. **All numbers less than 10 need a preceding 0** (e.g., `B03`, `C09`) for the Biomek to process them correctly.
+
+- **Goal**: Inoculate **1 µL** of saturated culture into **30 random wells** for each strain. The resulting plate will give you 30 replicate growth curves per strain.
+
+- **Note**:  
+  - **Edge wells** should contain **media blanks** to evaluate contamination and avoid unreliable curves due to evaporation.
+  - If you pre-fill the plate manually, any wells **not listed** in the CSV will stay blank.
+
+- **Biomek CSV format requirements**:
+  - File must be **comma-delimited**
+  - Use **DOS new line characters**
+  - Include the following header:
+    ```
+    Source.Plate,Source.Wells,Strain,Target.Plate,Target.Wells,Volume
+    ```
+
+### Hints for Creating the File in R
+
+- Use:
+  - `data.frame()`
+  - `set.seed(10)`
+  - `paste0()`, `rep()`, `toupper()`, `sprintf()`, `sample()`
+  - `write.table()` with:
+    - `col.names = TRUE`
+    - `row.names = FALSE`
+    - `sep = ","`
+    - `quote = FALSE`
+    - `eol = "\r\n"`
+
+- **Extra credit**: Write the whole code in **4 lines**.
+
+---
+
+## 2) Analyzing the Growth Curves
+
+You’ve completed the experiment. Is there a difference in how BY and RM grow?
+
+### Step 1: Fit Growth Curves
+
+- Read in the data from the GitHub repository [`joshsbloom/QuantGenSandbox`](https://github.com/joshsbloom/QuantGenSandbox):
+  - Growth data: `projects/growthCurves/growthCurves_01.csv`
+  - Biomek file used to setup the 96-well plate: `projects/growthCurves/randomize_01.csv`
+ 
+- Use:
+  - `growth.gcFitSpline()` from the **QurvE** R package
+  - `lubridate` to convert time into **decimal hours**
+
+- Extract **doubling times** during log-phase growth.  
+- Visualize a few of the growth curves and fits to confirm you understand the procedure and fitting looks reasonable.
+
+---
+
+### Step 2: Visualize Doubling Times
+
+- Use `ggplot2` to make:
+  - **Histogram** of doubling times by strain (with different colors)
+  - **Violin plot** showing:
+    - Individual points
+    - Mean
+    - 95% confidence interval of the mean
+
+---
+
+### Step 3: Statistical Test
+
+- Use `t.test()` in R to test for differences in means.  
+- **Question**: Should this be a **paired t-test**?
+
+---
+
+### Step 4: Permutation Test 
+
+Josh is concerned about:
+- Outliers
+- Non-normality
+- Unequal variances
+
+So he recommends performing a **permutation test**.
+
+- **Questions**: What assumptions does the permutation test make? Why might this 
+
+- Generate a **null distribution** of t-statistics by **permuting strain labels** 1000 times and calculating the t-statistic each time
+    - Visualize where the observed t-statistic is compared to this empirical null distribution
+    - Calculate an **empirical p-value** based on the observed t-statistic
+    - Visualize the results
+
+---
+
+### Step 5: Power Calculations
+
+Josh now asks:
+
+> How small of a fitness difference (measured in doubling time) are we powered to detect?
+
+Evaluate:
+
+- **Replicates per strain**: 3, 6, 12, 24, 48, 96, 384  
+- **Doubling time differences**: From 60 to 240 minutes, in **3-minute increments**  
+- **Assumptions**:
+  - BY mean = **90 min**
+  - SD = **18 min**
+  - Other strain has same SD
+
+- For each combo:
+  - Run 1000 simulations, simulating from two normal distributions with means being the expected doubling times, SD as above, and number of replicates per strain
+  - Calculate power as fraction of tests with `p < 0.05`
+
+- **Plot** using `ggplot2`:
+  - **X-axis**: Difference in doubling time (minutes)  
+  - **Y-axis**: Power  
+  - **Line color/type**: Sample size (convert to factor)
+
+- **Question**:  
+  > If you want to detect a 10-minute difference in doubling time, how many replicates do you need?
