@@ -111,7 +111,7 @@ Josh now asks:
 Evaluate statistical power by simulation across this grid of parameters:
 
 - **Replicates per strain**: 3, 6, 12, 24, 48, 96, 384  
-- **Doubling time differences**: From 60 to 240 minutes, in **3-minute increments**  
+- **Doubling time means for the arbitrary new strain**: From 60 to 240 minutes, in **3-minute increments**  
 - **Assumptions**:
   - BY mean doubling time = **90 min**
   - SD = **18 min**
@@ -127,4 +127,4 @@ Evaluate statistical power by simulation across this grid of parameters:
   - **Line color/type**: Sample size (convert to factor for prettier colors)
 
 - **Question**:  
-  > If you want to detect a 10-minute difference in doubling time, how many replicates do you need?
+  > If you want to detect a 10-minute difference in doubling time, how many replicates do you need? You can use the plot use just made to answer this.
