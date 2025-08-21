@@ -15,7 +15,7 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 - Read in the experiment design data [`projects/modelingFixedRandom/02_OD_design.csv`](/projects/modelingFixedRandom/02_OD_design.csv)
 - Read in the plateR formatted endpoint OD data[`projects/modelingFixedRandom/02_OD_measurements.csv`](/projects/modelingFixedRandom/02_OD_measurements.csv).
 - Use the **plateR** package to parse the plate data.
-- Merge the measurements with the design into one tidy `data.frame` for analysis.
+- Merge the measurements with the design into one `data.frame` for analysis.
 
 ---
 
