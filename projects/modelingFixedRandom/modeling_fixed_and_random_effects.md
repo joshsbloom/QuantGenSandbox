@@ -95,7 +95,7 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 - Retain only these corrected YPD:X values.  
 - Make a violin plot of these normalized strain responses, including the jittered individually normalized data points in the plot.  
 
-**Question:** What do you conclude about strain-level sensitivity to Chemical X after normalization?
+**Question:** What do you conclude about strain-level sensitivity to Chemical X after normalization? Why was this approach selected, what is it doing?
 
 ---
 
