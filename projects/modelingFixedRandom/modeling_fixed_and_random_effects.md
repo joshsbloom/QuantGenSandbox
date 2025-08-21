@@ -6,7 +6,7 @@ After a long (and ultimately unfocused and confusing) diatribe in lab meeting by
 
 Heriberto streaks out ten different yeast isolates and grows up overnight cultures of each and dilutes them back to 0.05 OD for innoculation. He also makes one working stock of YPD and YPD + Chemical X (YPD:X). Then the eight lab members each set up a subset of 48 wells across the plates, pipetting the appropriate media and innoculating it with the appropriate strain with their own pipettes. The four plates are grown overnight in the plate reader. Consistent with the disappointing nature of the current timeline, there was a power outage during the experiment, so all the lab is able to salvage is an endpoint OD reading for each plate.  
 
-Josh says, *"No worries, there's plenty of information in the endpoint OD for you to estimate heritability from this! But why on earth were so many of you involved in this experiment setup, each using your own pipettes!?"* After some explaining about the experiment design he says, *"Fine, whatever ... you kept track of everything relevant, time for some modeling!"*
+Josh says, *"No worries, there's plenty of information in the endpoint OD for you to estimate heritability from this! But why on earth were so many of you involved in this experiment setup, each using your own pipettes!?"* After the group explains the experiment design he says, *"Fine, whatever ... you kept track of everything relevant, time for some modeling!"*
 
 ---
 
@@ -40,6 +40,7 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 **Questions:**  
 - What do you conclude about strain, treatment, experimenter, and plate?  
 - Does anything stand out visually?
+- Why was it not ideal to have different people with different pipettes add the strain and media to each plate? What might you do differently next time? 
 
 ---
 
