@@ -72,7 +72,7 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
   - Then **including** experimenter and plate in the model.  
 - How do the results differ?  
 - Why does accounting for experimenter/plate change the estimates?  
-- Why is heritability of this trait hard to interpret on its oown?
+- Why is heritability of this trait hard to interpret on its own?
 
 ---
 
