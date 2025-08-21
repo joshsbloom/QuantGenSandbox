@@ -12,8 +12,8 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 
 ## 1. Read in the data
 - Read in the data from the GitHub repository [`joshsbloom/QuantGenSandbox`](https://github.com/joshsbloom/QuantGenSandbox):
-- Read in [`projects/modelingFixedRandom/02_OD_design.csv`] (experiment design).
-- Read in [`projects/modelingFixedRandom/02_OD_measurements.csv`] (endpoint OD, plateR formatted).
+- Read in the experiment design data [`projects/modelingFixedRandom/02_OD_design.csv`] (/projects/modelingFixedRandom/02_OD_design.csv)
+- Read in the plateR formatted endpoint OD data[`projects/modelingFixedRandom/02_OD_measurements.csv`] (/projects/modelingFixedRandom/02_OD_measurements.csv).
 - Use the **plateR** package to parse the plate data.
 - Merge the measurements with the design into one tidy `data.frame` for analysis.
 
@@ -28,7 +28,7 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 - Make additional similarly structured heatmaps showing **experimenter by well position** and **treatment by well position**.
 
 **b. Publication-ready 3-panel figure**
-- Create sub-panels A–C, label them in the **top-left corner**.
+- Create sub-panels A–C, label them in the **top-left corner**. Use `patchwork` and `ggplot2`.
 - Make **panel A twice the size** of B and C combined.
 - Panel A: Violin plots of endpoint OD by **strain** (x-axis), separate violins for each treatment.  
   - Overlay raw data (jittered points).  
