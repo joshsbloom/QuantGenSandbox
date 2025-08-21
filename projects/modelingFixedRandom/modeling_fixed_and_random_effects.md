@@ -12,8 +12,8 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 
 ## 1. Read in the data
 - Read in the data from the GitHub repository [`joshsbloom/QuantGenSandbox`](https://github.com/joshsbloom/QuantGenSandbox):
-- Read in the experiment design data [`projects/modelingFixedRandom/02_OD_design.csv`] (/projects/modelingFixedRandom/02_OD_design.csv)
-- Read in the plateR formatted endpoint OD data[`projects/modelingFixedRandom/02_OD_measurements.csv`] (/projects/modelingFixedRandom/02_OD_measurements.csv).
+- Read in the experiment design data [`projects/modelingFixedRandom/02_OD_design.csv`](/projects/modelingFixedRandom/02_OD_design.csv)
+- Read in the plateR formatted endpoint OD data[`projects/modelingFixedRandom/02_OD_measurements.csv`](/projects/modelingFixedRandom/02_OD_measurements.csv).
 - Use the **plateR** package to parse the plate data.
 - Merge the measurements with the design into one tidy `data.frame` for analysis.
 
