@@ -47,15 +47,15 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 
 - Fit a linear model:  
   ```
-  \text{OD} \sim \text{strain} + \text{treatment} + \text{plate} + \text{experimenter}
+  OD ~ strain + treatment + plate + experimenter
   ```
 - What is the **average effect of treatment**?  
 - Use `Anova()` to test significance of each factor.  
 - Next, add an **interaction** term:  
-  \[
-  \text{OD} \sim \text{strain} + \text{treatment} + \text{plate} + \text{experimenter} + \text{strain}:\text{treatment}
-  \]
-- Use a likelihood ratio test to decide if the interaction is needed.
+  ```
+  OD ~ strain + treatment + strain:treatment + plate + experimenter
+  ```
+- Use a likelihood ratio test to decide if the inclusion of the interaction term is justified.
 - Compare results to your visualization in 2b (panel A).
 
 ---
@@ -63,10 +63,13 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 ## 4. Broad-sense heritability in YPD:X
 
 - Restrict analysis to YPD:X wells only.
-- Estimate broad-sense heritability \( H^2 \):  
+- Estimate broad-sense heritability:
+    ```
+    H^2 = Var(Strain)/Var(Strain)+Var(Residual)
+    ```  
   - First **ignoring** experimenter and plate in the model.  
   - Then **including** experimenter and plate in the model.  
-- How do results differ?  
+- How do the results differ?  
 - Why does accounting for experimenter/plate change the estimates?  
 - Why is heritability of this trait hard to interpret on its oown?
 
@@ -75,9 +78,9 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 ## 5. Mixed model with random effects
 - Josh says plate and experimenter are better modeled as random effects here.
 - Fit a mixed model:  
-  \[
-  \text{OD} \sim \text{strain} * \text{treatment} + (1|\text{plate}) + (1|\text{experimenter})
-  \]
+  ```
+  OD ~ strain * treatment + (1|plate) + (1|experimenter)
+  ```
 - Compare this model (using **BIC**) to the fixed-effects model in step 3.  
 - Was Josh right that plate and experimenter should be random effects? Beyond just differences (or no differences) in BIC, why or why not?
 
@@ -97,7 +100,7 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 
 ## 7. Broad-sense heritability of the normalized trait
 
-- Calculate \( H^2 \) for the normalized trait (as in step 6).  
+- Calculate H^2 for the normalized trait (as in step 6).  
 - Reflect: **How can heritability be misleading?**  
 **Question:** How would the information here and in step 6 guide a QTL mapping experiment you could perform.
 
