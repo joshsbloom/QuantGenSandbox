@@ -24,7 +24,7 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 **a. Heatmaps**
 - Use `ggplot2` to make **8×12 heatmaps** of OD for each plate.  
 - Color wells using the **viridis** scale.  
-- Look for visually obvious plate- or position-dependent effects.  
+- Are there any visually obvious plate- or position-dependent effects?  
 - Make additional similarly structured heatmaps showing **experimenter by well position** and **treatment by well position**.
 
 **b. Publication-ready 3-panel figure**
@@ -46,9 +46,9 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 ## 3. Fixed-effects linear model
 
 - Fit a linear model:  
-  \[
+  ```
   \text{OD} \sim \text{strain} + \text{treatment} + \text{plate} + \text{experimenter}
-  \]
+  ```
 - What is the **average effect of treatment**?  
 - Use `Anova()` to test significance of each factor.  
 - Next, add an **interaction** term:  
