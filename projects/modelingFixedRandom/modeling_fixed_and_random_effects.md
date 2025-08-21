@@ -66,7 +66,7 @@ Josh says, *"No worries, there's plenty of information in the endpoint OD for yo
 - Restrict analysis to YPD:X wells only.
 - Estimate broad-sense heritability:
     ```
-    H^2 = Var(Strain)/Var(Strain)+Var(Residual)
+    H^2 = Var(Strain)/(Var(Strain)+Var(Residual))
     ```  
   - First **ignoring** experimenter and plate in the model.  
   - Then **including** experimenter and plate in the model.  
