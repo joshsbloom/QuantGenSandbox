@@ -1,6 +1,6 @@
 # Tutorial 3 - Analyzing Short-Read Sequencing Data
 
-After identifying a gene × environment interaction effect in **Tutorial #2**, the lab decides that the best course of action is to cross the **BY lab strain** to a wild isolate.  
+After identifying a gene × environment interaction effect in **Tutorial #2**, the lab decides that the best course of action is to cross the **BY lab strain** to a wild isolate and use QTL mapping to find the genetic locus or loci contributing the the different growth effects in Chemical X.  
 
 First, in each strain the **HO endonuclease gene** was disabled. Why was this necessary? Then BY was mated to one of the wild isolates. The resulting hybrid diploid was grown clonally, and then this culture was sporulated.
 
@@ -69,6 +69,20 @@ mamba activate genomics
 **Question:** What is the mystery strain?  
 
 ---
+## Pipeline Overview
+
+```mermaid
+flowchart TD
+    A[Short Reads / FASTQ] --> B[bwa mem: Align]
+    B --> C[SAM]
+    C --> D[Sambamba: Convert & Sort]
+    D --> E[BAM]
+    E --> F[IGV: Inspect]
+    E --> G[ASEReadCounter: Variant Counts]
+    G --> H[R: Hamming Distance]
+    H --> I[Most Likely Strain]
+```
+---
 
 ## 2. Visualize Meiotic Crossovers in a Haploid Yeast Segregant
 
@@ -85,16 +99,4 @@ mamba activate genomics
 
 ---
 
-## Pipeline Overview
 
-```mermaid
-flowchart TD
-    A[Short Reads (FASTQ)] --> B[bwa mem Alignment]
-    B --> C[SAM File]
-    C --> D[Sambamba Convert & Sort]
-    D --> E[BAM File]
-    E --> F[Variant Counting (GATK ASEReadCounter)]
-    F --> G[R Analysis: Hamming Distance]
-    G --> H[Strain Identification]
-    E --> I[IGV Visualization]
-```
