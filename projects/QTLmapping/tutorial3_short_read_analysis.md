@@ -14,7 +14,7 @@ Unfortunately, no one kept track of which wild isolate strain BY was crossed to.
 
 ## 1. Determine the Strain Identity of the Mystery Strain
 
-1. Manually use **NCBI BLAST** to take a few short reads from the mystery strain and evaluate whether they are coming from yeast.  
+1. Manually use **NCBI BLAST** to take a few short reads from the mystery strain (`mysteryStrain_reads_r1.fq.gz` and `mysteryStrain_reads_r2.fq.gz`) and evaluate whether they are coming from yeast.  
 2. Assuming they are, use the tool **bwa mem** (see below) to align the paired-end reads to the reference genome `sacCer3.fasta` (provided).  
 3. Pipe the output of `bwa mem` to **sambamba** (see below) to convert the output SAM into a BAM-formatted file, and then sort the BAM file.  
 4. Once you have created a BAM file, visualize the short-read alignments in **IGV**. Look at the first 10–20 Kbp on **ChrI**.  
@@ -86,8 +86,8 @@ flowchart TD
 
 ## 2. Visualize Meiotic Crossovers in a Haploid Yeast Segregant
 
-1. Use the same pipeline as above to align short reads from the **first segregant** and call genotypes.  
-2. Call genotypes at the variant sites that are expected between **BY (reference)** and the identified **mystery strain** only.  
+1. Use the same pipeline as above to align short reads from the **first segregant** (`seg1_reads_r1.fq.gz` and `seg1_reads_r2.fq.gz`) and call genotypes.  
+2. Retain genotype calls at the variant sites that are expected between **BY (reference)** and the identified **mystery strain** only.  
 3. Recode:  
    - BY variants as `0`  
    - RM variants as `+1`  
